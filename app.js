@@ -1,10 +1,3 @@
-// Store the min/max hourly customers, and the average cookies per customer, in object properties.
-// Use a method of that object to generate a random number of customers per hour. Objects/Math/random
-// Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated.
-// Store the results for each location in a separate array… perhaps as a property of the object representing that location.
-// Display the values of each array as unordered lists in the browser.
-// Calculating the sum of these hourly totals; your output for each location should look like this:
-
 // my guess:
 
 // const seattle = {
@@ -41,35 +34,171 @@ function randomNumber(min, max) {
 }
 //complex maths that everyone needs to use
 
-//our first shop
-const seattle = {
-  location: "Seattle",
-  minCust: 23,
-  maxCust: 65,
-  avgCookiesPerCust: 6.3,
-  customersPerHour: [],
-  cookiesPerHour: [],
-  totalCookiesSold: 0,
-  calculateSales: function () {
-    for (let i = 0; i < hours.length; i++) {
-      const randNum = randomNumber(this.minCust, this.maxCust);
-      this.customersPerHour.push(randNum);
-      this.cookiesPerHour.push(randNum * this.avgCookiesPerCust);
-    }
-  },
-};
+//5 shops:
 
-seattle.calculateSales();
-console.log(seattle);
+//our first shop, Seattle
+function calculateSeattleSales() {
+  const seattle = {
+    location: "Seattle",
+    minCust: 23,
+    maxCust: 65,
+    avgCookiesPerCust: 6.3,
+    customersPerHour: [],
+    cookiesPerHour: [],
+    totalCookiesSold: 0,
+    calculateSales: function () {
+      for (let i = 0; i < hours.length; i++) {
+        const randNum = randomNumber(this.minCust, this.maxCust);
+        this.customersPerHour.push(randNum);
+        const cookiesSold = randNum * this.avgCookiesPerCust;
+        this.cookiesPerHour.push(cookiesSold);
+        this.totalCookiesSold += cookiesSold;
+      }
+    },
+  };
 
-const locationSales = document.getElementById("locationSales");
-const article = document.createElement("article"); //created article tag
+  seattle.calculateSales();
+  return seattle;
+}
 
-//Name
-const h2 = document.createElement("h2"); //wrote h2
-h2.textContent = seattle.location; // wrote the location
-article.appendChild(h2); //added to article
+//our second shop, Tokyo
+function calculateTokyoSales() {
+  const tokyo = {
+    location: "Tokyo",
+    minCust: 3,
+    maxCust: 24,
+    avgCookiesPerCust: 1.2,
+    customersPerHour: [],
+    cookiesPerHour: [],
+    totalCookiesSold: 0,
+    calculateSales: function () {
+      for (let i = 0; i < hours.length; i++) {
+        const randNum = randomNumber(this.minCust, this.maxCust);
+        this.customersPerHour.push(randNum);
+        const cookiesSold = randNum * this.avgCookiesPerCust;
+        this.cookiesPerHour.push(cookiesSold);
+        this.totalCookiesSold += cookiesSold;
+      }
+    },
+  };
 
-locationSales.appendChild(article); //appending article in div?
+  tokyo.calculateSales();
+  return tokyo;
+}
 
-//List featuring `${hours[i]}: ${cookiesPerHour[i]} cookies` then `Total: ${totalCookiesSold} cookies`
+//our third shop, Dubai
+function calculateDubaiSales() {
+  const dubai = {
+    location: "Dubai",
+    minCust: 11,
+    maxCust: 38,
+    avgCookiesPerCust: 3.7,
+    customersPerHour: [],
+    cookiesPerHour: [],
+    totalCookiesSold: 0,
+    calculateSales: function () {
+      for (let i = 0; i < hours.length; i++) {
+        const randNum = randomNumber(this.minCust, this.maxCust);
+        this.customersPerHour.push(randNum);
+        const cookiesSold = randNum * this.avgCookiesPerCust;
+        this.cookiesPerHour.push(cookiesSold);
+        this.totalCookiesSold += cookiesSold;
+      }
+    },
+  };
+
+  dubai.calculateSales();
+  return dubai;
+}
+
+//our fourth shop, Paris
+function calculateParisSales() {
+  const paris = {
+    location: "Paris",
+    minCust: 20,
+    maxCust: 38,
+    avgCookiesPerCust: 2.3,
+    customersPerHour: [],
+    cookiesPerHour: [],
+    totalCookiesSold: 0,
+    calculateSales: function () {
+      for (let i = 0; i < hours.length; i++) {
+        const randNum = randomNumber(this.minCust, this.maxCust);
+        this.customersPerHour.push(randNum);
+        const cookiesSold = randNum * this.avgCookiesPerCust;
+        this.cookiesPerHour.push(cookiesSold);
+        this.totalCookiesSold += cookiesSold;
+      }
+    },
+  };
+
+  paris.calculateSales();
+  return paris;
+}
+
+//our fifth shop, Lima
+function calculateLimaSales() {
+  const lima = {
+    location: "Lima",
+    minCust: 2,
+    maxCust: 16,
+    avgCookiesPerCust: 4.6,
+    customersPerHour: [],
+    cookiesPerHour: [],
+    totalCookiesSold: 0,
+    calculateSales: function () {
+      for (let i = 0; i < hours.length; i++) {
+        const randNum = randomNumber(this.minCust, this.maxCust);
+        this.customersPerHour.push(randNum);
+        const cookiesSold = randNum * this.avgCookiesPerCust;
+        this.cookiesPerHour.push(cookiesSold);
+        this.totalCookiesSold += cookiesSold;
+      }
+    },
+  };
+
+  lima.calculateSales();
+  return lima;
+}
+
+//function to create and append the name, list, and total list to the DOM
+
+function displaySales(cityLocation) {
+  const locationSales = document.getElementById("locationSales"); //targets the div
+
+  const article = document.createElement("article"); //create article tag
+
+  //Name
+  const h2 = document.createElement("h2"); //wrote h2
+  h2.textContent = cityLocation.location; // wrote the location
+  article.appendChild(h2); //added to article
+
+  //list
+  const ul = document.createElement("ul"); // created ul
+  for (let i = 0; i < hours.length; i++) {
+    //can cycle through the hours
+    const li = document.createElement("li"); //creates the li tag under ul
+    li.textContent = `${hours[i]}: ${cityLocation.cookiesPerHour[i]} cookies`; // displays the sentence needed in li tag
+    ul.appendChild(li); //inserts to ul
+  }
+  // total list
+  const totalList = document.createElement("li"); //creates extra li tag
+  totalList.textContent = `Total: ${cityLocation.totalCookiesSold} cookies`; //displays the sentence
+  ul.appendChild(totalList); //adds to ul
+
+  article.appendChild(ul); //adds ul to article
+
+  locationSales.appendChild(article); //appending article in div
+}
+
+// displaying the lists
+const seattle = calculateSeattleSales();
+const tokyo = calculateTokyoSales();
+const dubai = calculateDubaiSales();
+const paris = calculateParisSales();
+const lima = calculateLimaSales();
+displaySales(seattle);
+displaySales(tokyo);
+displaySales(dubai);
+displaySales(paris);
+displaySales(lima);
