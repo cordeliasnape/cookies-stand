@@ -33,9 +33,38 @@ function Sales(location, minCust, maxCust, average, custPH, cookPH, total) {
 }
 
 //make a loop for hours header in table and run it in function
-const tableHeader =
-  //function
-  function headerRow() {};
+function headerRow() {
+  const tableHeader = document.getElementById("headerTable");
+  const headerTR = document.createElement("tr");
+  const shopHours = [
+    //added in bc 16 boxes needed
+    " ",
+    "6am",
+    "7am",
+    "8am",
+    "9am",
+    "10am",
+    "11am",
+    "12pm",
+    "1pm",
+    "2pm",
+    "3pm",
+    "4pm",
+    "5pm",
+    "6pm",
+    "7pm",
+    "Daily Location Total",
+  ];
+
+  for (let i = 0; i < shopHours.length; i++) {
+    const hoursTH = document.createElement("th");
+    hoursTH.textContent = shopHours[i];
+    headerTR.appendChild(hoursTH);
+  }
+
+  tableHeader.appendChild(headerTR);
+}
+//function
 
 //Function to calculate average cookies per hour, customers per hour, cookies per hour
 Sales.prototype.calculateSales = function () {
@@ -84,6 +113,8 @@ const tableFooter =
   function footerRow() {};
 
 //5 locations:
+headerRow();
+
 const seattleSales = new Sales("Seattle", 23, 65, 6.3, [], [], 0);
 seattleSales.calculateSales();
 seattleSales.render();

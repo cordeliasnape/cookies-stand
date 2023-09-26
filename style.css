@@ -1,7 +1,14 @@
+h2 {
+  font-family: monospace;
+  text-align: center;
+  padding: 20px;
+}
+
 table {
   border-collapse: collapse;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+  font-family: monospace;
 }
 
 th,
@@ -13,4 +20,8 @@ td {
 
 th {
   background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: aliceblue;
 }
