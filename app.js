@@ -34,8 +34,6 @@ function Sales(location, minCust, maxCust, average, custPH, cookPH, total) {
 
 //make a loop for hours header in table and run it in function
 function headerRow() {
-  const tableHeader = document.getElementById("headerTable");
-  const headerTR = document.createElement("tr");
   const shopHours = [
     //added in bc 16 boxes needed
     " ",
@@ -55,13 +53,13 @@ function headerRow() {
     "7pm",
     "Daily Location Total",
   ];
-
+  const tableHeader = document.getElementById("headerTable");
+  const headerTR = document.createElement("tr");
   for (let i = 0; i < shopHours.length; i++) {
     const hoursTH = document.createElement("th");
     hoursTH.textContent = shopHours[i];
     headerTR.appendChild(hoursTH);
   }
-
   tableHeader.appendChild(headerTR);
 }
 //function
