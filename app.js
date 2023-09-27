@@ -21,16 +21,28 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//Constructor Function:
-function Sales(location, minCust, maxCust, average, custPH, cookPH, total) {
+//Constructor Function - capital letter, use of 'this', and 'new' keyword:
+function Sales(location, minCust, maxCust, average) {
   this.location = location;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookiesPerCust = average;
-  this.customersPerHour = custPH;
-  this.cookiesPerHour = cookPH;
-  this.totalCookiesSold = total;
-}
+  this.customersPerHour = [];
+  this.cookiesPerHour = [];
+  this.totalCookiesSold = 0;
+} //Function to calculate average cookies per hour, customers per hour, cookies per hour
+Sales.prototype.calculateSales = function () {
+  for (let i = 0; i < hours.length; i++) {
+    //get the numbers of customers for the hour
+    const hourCust = randomNumber(this.minCust, this.maxCust);
+    this.customersPerHour.push(hourCust);
+    //number of cookies sold this hour
+    const hourCookiesSold = Math.floor(hourCust * this.avgCookiesPerCust);
+    this.cookiesPerHour.push(hourCookiesSold);
+    //increase total cookies by adding this hours sales to it
+    this.totalCookiesSold = this.totalCookiesSold + hourCookiesSold;
+  }
+};
 
 //make a loop for hours header in table and run it in function
 function headerRow() {
@@ -64,22 +76,9 @@ function headerRow() {
 }
 //function
 
-//Function to calculate average cookies per hour, customers per hour, cookies per hour
-Sales.prototype.calculateSales = function () {
-  for (let i = 0; i < hours.length; i++) {
-    //get the numbers of customers for the hour
-    const hourCust = randomNumber(this.minCust, this.maxCust);
-    this.customersPerHour.push(hourCust);
-    //number of cookies sold this hour
-    const hourCookiesSold = Math.floor(hourCust * this.avgCookiesPerCust);
-    this.cookiesPerHour.push(hourCookiesSold);
-    //increase total cookies by adding this hours sales to it
-    this.totalCookiesSold = this.totalCookiesSold + hourCookiesSold;
-  }
-};
-
 //Function to make the table work:
 Sales.prototype.render = function () {
+  this.calculateSales();
   const salesTable = document.getElementById("salesTable");
   //start tr
   const salesTR = document.createElement("tr");
@@ -90,7 +89,7 @@ Sales.prototype.render = function () {
   salesTR.appendChild(locationTH);
 
   //14 td's showing hour/cookie total
-  for (let i = 0; i < hours.length; i++) {
+  for (let i = 0; i < this.cookiesPerHour.length; i++) {
     const hourCookieTD = document.createElement("td");
     hourCookieTD.textContent = this.cookiesPerHour[i];
     salesTR.appendChild(hourCookieTD);
@@ -110,27 +109,22 @@ const tableFooter =
   //function
   function footerRow() {};
 
-//5 locations:
+//Table:
 headerRow();
 
-const seattleSales = new Sales("Seattle", 23, 65, 6.3, [], [], 0);
-seattleSales.calculateSales();
+const seattleSales = new Sales("Seattle", 23, 65, 6.3);
 seattleSales.render();
 
-const tokyoSales = new Sales("Tokyo", 3, 24, 1.2, [], [], 0);
-tokyoSales.calculateSales();
+const tokyoSales = new Sales("Tokyo", 3, 24, 1.2);
 tokyoSales.render();
 
-const dubaiSales = new Sales("Dubai", 11, 38, 3.7, [], [], 0);
-dubaiSales.calculateSales();
+const dubaiSales = new Sales("Dubai", 11, 38, 3.7);
 dubaiSales.render();
 
-const parisSales = new Sales("Paris", 20, 38, 2.3, [], [], 0);
-parisSales.calculateSales();
+const parisSales = new Sales("Paris", 20, 38, 2.3);
 parisSales.render();
 
-const limaSales = new Sales("Lima", 2, 16, 4.6, [], [], 0);
-limaSales.calculateSales();
+const limaSales = new Sales("Lima", 2, 16, 4.6);
 limaSales.render();
 
 // //lab 06
