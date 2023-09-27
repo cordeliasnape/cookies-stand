@@ -44,40 +44,27 @@ Sales.prototype.calculateSales = function () {
   }
 };
 
-//make a loop for hours header in table and run it in function
+//function to make header
+
 function headerRow() {
-  const shopHours = [
-    //added in bc 16 boxes needed
-    " ",
-    "6am",
-    "7am",
-    "8am",
-    "9am",
-    "10am",
-    "11am",
-    "12pm",
-    "1pm",
-    "2pm",
-    "3pm",
-    "4pm",
-    "5pm",
-    "6pm",
-    "7pm",
-    "Daily Location Total",
-  ];
   const tableHeader = document.getElementById("headerTable");
   const headerTR = document.createElement("tr");
-  for (let i = 0; i < shopHours.length; i++) {
+  const blankTD = document.createElement("td");
+  headerTR.appendChild(blankTD);
+
+  for (let i = 0; i < hours.length; i++) {
     const hoursTH = document.createElement("th");
-    hoursTH.textContent = shopHours[i];
+    hoursTH.textContent = hours[i];
     headerTR.appendChild(hoursTH);
   }
+
   tableHeader.appendChild(headerTR);
 }
-//function
 
 //Function to make the table work:
 Sales.prototype.render = function () {
+  //table start
+
   this.calculateSales();
   const salesTable = document.getElementById("salesTable");
   //start tr
@@ -103,6 +90,11 @@ Sales.prototype.render = function () {
   // close tr
   salesTable.append(salesTR);
 };
+
+//total heading
+// const totalTd = document.createElement("td");
+// totalTd.textContent = this.totalCookieSold;
+// tr.appendChild(totalTd);
 
 //Function to add table header row under with  total sales per hour for all locations
 const tableFooter =
