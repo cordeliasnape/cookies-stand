@@ -1,4 +1,68 @@
-h2 {
+/* colors: grey - #1B2F33 blue - #859D98 salmon - #D25B41 pink - #E89f8B light pink - #F9E0D9 */
+
+header {
+  width: 100;
+  height: auto;
+  background-color: #d25b41;
+  display: flex;
+}
+
+#logo {
+  width: 130px;
+  height: 130px;
+  border: 2px solid white;
+  margin: 20px;
+}
+
+#header-heading {
+  width: 40%;
+  padding: 10px;
+}
+
+h1 {
+  color: white;
+  font-family: arial;
+  padding: 10px;
+  margin: 10px;
+  font-size: 40px;
+  justify-content: left;
+  display: block;
+  height: 40px;
+}
+
+header h3 {
+  color: #f9e0d9;
+  font-family: arial;
+  padding: 10px;
+  margin: 10px;
+  font-size: 25px;
+  display: block;
+  height: 40px;
+}
+
+nav {
+  color: #f9e0d9;
+  font-family: arial;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+nav button {
+  padding: 10px;
+  height: 50px;
+  margin: 20px;
+  border: 2px solid white;
+  font-size: larger;
+  background-color: #e89f8b;
+  color: white;
+}
+
+nav button:hover {
+  background-color: #859d98;
+}
+
+/* h2 {
   font-family: monospace;
   text-align: center;
   padding: 20px;
@@ -24,4 +88,4 @@ th {
 
 tr:nth-child(odd) {
   background-color: aliceblue;
-}
+} */
