@@ -237,7 +237,7 @@ main {
   text-indent: 30px;
 }
 
-/* h2 {
+h2 {
   font-family: monospace;
   text-align: center;
   padding: 20px;
@@ -263,4 +263,4 @@ th {
 
 tr:nth-child(odd) {
   background-color: aliceblue;
-} */
+}
