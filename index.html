@@ -9,16 +9,23 @@
   </head>
   <body>
     <header>
-      <img id="logo" src="./product-images/logo.png" />
+      <div id="logo-box">
+        <img id="logo" src="./product-images/logo.png" />
+      </div>
       <div id="header-heading">
         <h1>Pat's Salmon Cookies</h1>
         <h3>Cookies for your kids and your salmon? Sorted.</h3>
       </div>
       <nav>
-        <button>Pat's Story</button>
-        <button>Our Locations</button>
-        <button onclick=window.location.href="https://cordeliasnape.github.io/cookies-stand/sales.html">Our Sales</button>
-        <button>Menu</button>
+        <button class="nav-button">Pat's Story</button>
+        <button class="nav-button">Our Locations</button>
+        <button class="nav-button"
+          onclick="window.location.href"
+          ="https://cordeliasnape.github.io/cookies-stand/"
+        >
+          Home Page
+        </button>
+        <button class="nav-button">Menu</button>
       </nav>
     </header>
     <main>
@@ -57,13 +64,13 @@
           <div class="location-text">
             <h3 class="location-title">Seattle</h3>
             <p>
-              <ol class="address">
+              <ul class="address">
                 <li>Find us at:</li>
                 <li>123 Salmon Street</li>
                 <li>District</li>
                 <li>Seattle</li>
                 <li>(555) 555-1234</li>
-              </ol>
+              </ul>
               <ul class="opening-times">
                 <li>Monday: 06:00 - 19:00</li>
                 <li>Tuesday: 06:00 - 19:00</li>
@@ -81,13 +88,13 @@
           <div class="location-text">
             <h3 class="location-title">Tokyo</h3>
             <p>
-              <ol class="address">
+              <ul class="address">
                 <li>Find us at:</li>
                 <li>123 Salmon Street</li>
                 <li>District</li>
                 <li>Tokyo</li>
                 <li>(555) 555-1234</li>
-              </ol>
+              </ul>
               <ul class="opening-times">
                 <li>Monday: 06:00 - 19:00</li>
                 <li>Tuesday: 06:00 - 19:00</li>
@@ -105,13 +112,13 @@
           <div class="location-text">
             <h3 class="location-title">Dubai</h3>
             <p>
-              <ol class="address">
+              <ul class="address">
                 <li>Find us at:</li>
                 <li>123 Salmon Street</li>
                 <li>District</li>
                 <li>Dubai</li>
                 <li>(555) 555-1234</li>
-              </ol>
+              </ul>
               <ul class="opening-times">
                 <li>Monday: 06:00 - 19:00</li>
                 <li>Tuesday: 06:00 - 19:00</li>
@@ -129,13 +136,13 @@
           <div class="location-text">
             <h3 class="location-title">Paris</h3>
             <p>
-              <ol class="address">
+              <ul class="address">
                 <li>Find us at:</li>
                 <li>123 Salmon Street</li>
                 <li>District</li>
                 <li>Paris</li>
                 <li>(555) 555-1234</li>
-              </ol>
+              </ul>
               <ul class="opening-times">
                 <li>Monday: 06:00 - 19:00</li>
                 <li>Tuesday: 06:00 - 19:00</li>
@@ -153,13 +160,13 @@
           <div class="location-text">
             <h3 class="location-title">Lima</h3>
             <p>
-              <ol class="address">
+              <ul class="address">
                 <li>Find us at:</li>
                 <li>123 Salmon Street</li>
                 <li>District</li>
                 <li>Lima</li>
                 <li>(555) 555-1234</li>
-              </ol>
+              </ul>
               <ul class="opening-times">
                 <li>Monday: 06:00 - 19:00</li>
                 <li>Tuesday: 06:00 - 19:00</li>
@@ -173,7 +180,31 @@
           </div>
         </span>
       </section>
-      <section id="about"></section>
+      <section id="about">
+          <div class="textbox2">
+            <h2 class="title2">Our Ethos</h2>
+            <p class="list-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis soluta aut, magnam deleniti eaque est, iure cum quasi, sunt rem blanditiis quibusdam. Totam dolores quam incidunt excepturi odio voluptatibus vero officiis maiores, soluta tempora ratione, doloribus cumque. Doloremque dicta cumque optio laudantium deserunt illum? Voluptatum quasi architecto natus eligendi sint odit, nemo magni officiis necessitatibus tempore, voluptate quae perspiciatis? 
+            </p>
+            <ol>
+                <li class="ethos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, rem!</li>
+                <li class="ethos">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt corporis earum, ratione commodi facilis odio.</li>
+                <li class="ethos">Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                <li class="ethos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, sed eligendi doloribus optio in numquam nesciunt cupiditate dolores est repellendus!</li>
+                <li class="ethos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero.</li>
+              </ol>
+              <p class="list-text">
+              Quas qui quasi nesciunt illum
+              hic dicta repellat distinctio expedita amet voluptatem cupiditate
+              quaerat harum omnis ipsam, vero nam?
+            </p>
+          </div>
+          <div id="about-pics">
+            <img class="about-image" src="./filler/flying.jpeg" />
+            <img class="about-image" src="./filler/river.jpeg" />
+            <img class="about-image" src="./filler/swimming.jpeg" />
+          </div>
+      </section>
       <section id="menu"></section>
     </main>
     <footer></footer>
