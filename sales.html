@@ -27,11 +27,29 @@
         <button>Menu</button>
       </nav>
     </header>
-    <main>
+    <main id="salesMain">
       <h2 class="title">Our Sales Across our Locations</h2>
       <!-- <div id="locationSales"></div> -->
       <table id="headerTable"></table>
       <table id="salesTable"></table>
+      <!-- <table id="footerTable"></table> -->
+      <div class="pagebreak"></div>
+      <section id="formSection">
+        <form id="newSalesForm">
+          <fieldset>
+            <h2 class="subheading">Submit a new location here:</h2>
+            <label>Location:</label>
+            <input name="location" type="text" />
+            <label>Minimum Customers an Hour:</label>
+            <input name="minCust" type="number" />
+            <label>Maximum Customers an Hour:</label>
+            <input name="maxCust" type="number" />
+            <label>Average Number of Cookies Bought per Customer:</label>
+            <input name="average" type="number" />
+            <button>Submit</button>
+          </fieldset>
+        </form>
+      </section>
     </main>
   </body>
 </html>

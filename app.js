@@ -97,9 +97,10 @@ Sales.prototype.render = function () {
 // tr.appendChild(totalTd);
 
 //Function to add table header row under with  total sales per hour for all locations
-const tableFooter =
-  //function
-  function footerRow() {};
+// const tableFooter =
+// function footerRow() {};
+
+// running the code
 
 //Table:
 headerRow();
@@ -118,6 +119,22 @@ parisSales.render();
 
 const limaSales = new Sales("Lima", 2, 16, 4.6);
 limaSales.render();
+
+// form functionality
+const form = document.getElementById("newSalesForm");
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const location = event.target.location.value;
+  const minCust = event.target.minCust.value;
+  const maxCust = event.target.maxCust.value;
+  const average = event.target.average.value;
+
+  const newSales = new Sales(location, minCust, maxCust, average);
+  newSales.render();
+});
+
+//TODAY add a call for table function
 
 // //lab 06
 // //our first shop, Seattle
