@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200&display=swap");
+
 /* colors: grey - #1B2F33 blue - ##94c6cd salmon - #D25B41 pink - #E89f8B light pink - #F9E0D9 */
+/* font-family: 'Azeret Mono', monospace; */
 
 body {
-  background-color: #f8edea;
+  background-color: #d6d6d6;
 }
 
 header {
@@ -18,6 +21,11 @@ header {
   height: 130px;
   border: 2px solid white;
   margin: 20px 0px;
+}
+
+#logo:hover {
+  border: 4px solid white;
+  transition: 300ms;
 }
 
 #header-heading {
@@ -45,23 +53,27 @@ h1 {
   overflow: hidden;
   white-space: nowrap;
 }
+h1:hover {
+  padding: 22px 33px;
+  transition: 300ms;
+}
 
 .title {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
+  font-size: 40px;
+  border: 3px solid #506567;
+  box-shadow: 2px 2px #888888;
+  text-shadow: 2px 2px #1b2f33;
+  background-color: #94c6cd;
   padding: 10px 15px 10px 10px;
   margin: 10px 10px 20px 10px;
-  font-size: 40px;
   justify-content: left;
   display: block;
   height: 40px;
-  text-shadow: 2px 2px #1b2f33;
-  background-color: #94c6cd;
   max-width: fit-content;
-  border: 3px solid #506567;
-  box-shadow: 2px 2px #888888;
 }
 
 .title2 {
@@ -138,7 +150,10 @@ nav button {
 }
 
 nav button:hover {
+  padding: 15px;
   background-color: #94c6cd;
+  transition: 300ms;
+  cursor: pointer;
 }
 
 main {
@@ -166,7 +181,7 @@ main {
 }
 
 .textbox1 p {
-  font-family: arial;
+  font-family: "Azeret Mono", monospace;
   font-size: 19px;
   display: flex;
   align-items: center;
@@ -183,6 +198,12 @@ main {
   box-shadow: 10px 10px #888888;
   width: 35%;
   margin: 15px;
+}
+
+#pat:hover {
+  border: 15px solid #506567;
+  transition: 300ms;
+  cursor: pointer;
 }
 
 #loc-bar {
@@ -257,7 +278,7 @@ main {
 }
 
 .address {
-  font-family: arial;
+  font-family: "Azeret Mono", monospace;
   font-size: 19px;
   display: flex;
   align-items: flex-start;
@@ -275,6 +296,7 @@ main {
   justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 #about-pics {
@@ -292,6 +314,12 @@ main {
   margin: 10px;
 }
 
+.about-image:hover {
+  width: 103%;
+  border: #ffffff solid 5px;
+  transition: 300ms;
+}
+
 .textbox2 {
   border: #185f79 solid 10px;
   width: 50%;
@@ -305,7 +333,7 @@ main {
 }
 
 .textbox2 p {
-  font-family: arial;
+  font-family: "Azeret Mono", monospace;
   font-size: 20px;
   background-color: #94c6cd;
   color: #ffffff;
@@ -316,14 +344,13 @@ main {
 }
 
 ol {
-  font-family: arial;
+  font-family: "Azeret Mono", monospace;
   font-size: 20px;
   background-color: #94c6cd;
   color: #ffffff;
   width: 90%;
   margin: 5px;
   padding: 20px;
-  letter-spacing: 1px;
   list-style-type: square;
   text-align: justify;
 }
@@ -332,6 +359,55 @@ ol {
   list-style-position: inside;
   padding: 5px 10px 5px 20px;
   margin: 10px 0px;
+}
+
+#menu {
+  background-color: white;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+#menu-album {
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+.menu-image {
+  width: 420px;
+  margin: 5px;
+  border: solid #e89f8b 4px;
+}
+
+.menu-image:hover {
+  border: solid #d25b41 5px;
+  transition: 300ms;
+}
+
+#menu-button {
+  color: #f9e0d9;
+  font-family: "Azeret Mono", monospace;
+  font-weight: 800;
+  font-size: 50px;
+  border: solid black 0px;
+  background-color: #e89f8b;
+  align-items: center;
+  position: relative;
+  justify-items: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 30px;
+  margin: 50px;
+}
+
+#menu-button:hover {
+  background-color: #d25b41;
+  transition: 300ms;
+  cursor: pointer;
 }
 
 /*  only table below this point */
