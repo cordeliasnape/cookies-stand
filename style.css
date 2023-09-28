@@ -67,7 +67,7 @@ h1 {
   font-weight: 800;
   text-transform: uppercase;
   padding: 10px 15px 10px 10px;
-  margin: 0 auto;
+  margin: 30px;
   font-size: 20px;
   justify-content: center;
   display: block;
@@ -95,6 +95,10 @@ nav {
   margin: 0 auto;
   display: flex;
   align-items: center;
+}
+
+button {
+  cursor: pointer;
 }
 
 nav button {
@@ -266,7 +270,7 @@ main {
 
 #salesTitle {
   margin: 30px;
-  align-items: center;
+  justify-content: center;
 }
 
 table {
@@ -298,21 +302,27 @@ tr:nth-child(odd) {
 
 #formSection {
   margin: 0 auto;
+  display: block;
 }
 
 form {
   display: flex;
+  justify-content: center;
+}
+
+#form-title {
+  margin: 0 auto;
   align-items: center;
 }
 
 fieldset {
   font-family: arial;
   font-size: 20px;
-  margin: 0 auto;
+  margin: 30px;
   padding-top: 20px;
   background-color: #f9e0d9;
   padding: 10px;
-  text-indent: 25px;
+  text-indent: 10px;
   letter-spacing: 1px;
   color: #1b2f33;
   display: flex;
@@ -322,4 +332,10 @@ fieldset {
 input {
   padding: 10px;
   margin: 10px;
+}
+
+fieldset button {
+  padding: 5px 10px;
+  max-width: fit-content;
+  margin: 0 auto;
 }
