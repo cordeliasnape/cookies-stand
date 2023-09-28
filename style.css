@@ -186,9 +186,9 @@ main {
   display: flex;
   align-items: center;
   background-color: #f9e0d9;
-  padding: 10px;
-  margin: 5px;
-  text-indent: 25px;
+  padding: 15px;
+  margin: 15px;
+  text-indent: 40px;
   letter-spacing: 1px;
   color: #1b2f33;
 }
