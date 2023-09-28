@@ -137,7 +137,7 @@ nav button {
   color: white;
 }
 
-nav button hover {
+nav button:hover {
   background-color: #94c6cd;
 }
 
