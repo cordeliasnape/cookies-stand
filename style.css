@@ -67,7 +67,7 @@ h1 {
   font-weight: 800;
   text-transform: uppercase;
   padding: 10px 15px 10px 10px;
-  margin: 10px 10px 20px 10px;
+  margin: 0 auto;
   font-size: 20px;
   justify-content: center;
   display: block;
@@ -174,7 +174,6 @@ main {
   align-items: center;
   background-color: #f9e0d9;
   padding: 10px;
-  margin: 5px;
   text-indent: 25px;
   letter-spacing: 1px;
   color: #1b2f33;
@@ -262,13 +261,12 @@ main {
 }
 
 #salesTable {
-  border: #1b2f33 solid 5px;
+  border: #1b2f33 solid 2px;
 }
 
-h2 {
-  font-family: monospace;
-  padding: 20px;
-  justify-content: center;
+#salesTitle {
+  margin: 30px;
+  align-items: center;
 }
 
 table {
@@ -298,6 +296,10 @@ tr:nth-child(odd) {
   height: 40px;
 }
 
+#formSection {
+  margin: 0 auto;
+}
+
 form {
   display: flex;
   align-items: center;
@@ -307,9 +309,9 @@ fieldset {
   font-family: arial;
   font-size: 20px;
   margin: 0 auto;
+  padding-top: 20px;
   background-color: #f9e0d9;
   padding: 10px;
-  margin: 5px;
   text-indent: 25px;
   letter-spacing: 1px;
   color: #1b2f33;

@@ -47,7 +47,7 @@ Sales.prototype.calculateSales = function () {
 //function to make header
 
 function headerRow() {
-  const tableHeader = document.getElementById("headerTable");
+  const tableHeader = document.getElementById("salesTable");
   const headerTR = document.createElement("tr");
   const blankTD = document.createElement("td");
   headerTR.appendChild(blankTD);
@@ -57,11 +57,13 @@ function headerRow() {
     hoursTH.textContent = hours[i];
     headerTR.appendChild(hoursTH);
   }
+  //
 
   tableHeader.appendChild(headerTR);
 }
 
-//Function to make the table work:
+// Function to make the table work:
+
 Sales.prototype.render = function () {
   //table start
 
@@ -84,25 +86,16 @@ Sales.prototype.render = function () {
 
   //1 td with Daily Location Sales total
   const dailySalesTD = document.createElement("td");
-  dailySalesTD.textContent = this.total;
+  dailySalesTD.textContent = this.totalCookiesSold;
   salesTR.appendChild(dailySalesTD);
 
   // close tr
   salesTable.append(salesTR);
 };
 
-//total heading
-// const totalTd = document.createElement("td");
-// totalTd.textContent = this.totalCookieSold;
-// tr.appendChild(totalTd);
-
-//Function to add table header row under with  total sales per hour for all locations
-// const tableFooter =
-// function footerRow() {};
-
 // running the code
 
-//Table:
+//header table:
 headerRow();
 
 const seattleSales = new Sales("Seattle", 23, 65, 6.3);
@@ -134,8 +127,6 @@ form.addEventListener("submit", function (event) {
   newSales.render();
 });
 
-//TODAY add a call for table function
-
 // //lab 06
 // //our first shop, Seattle
 // function calculateSeattleSales() {
@@ -165,108 +156,6 @@ form.addEventListener("submit", function (event) {
 //   return seattle;
 // }
 
-// //our second shop, Tokyo
-// function calculateTokyoSales() {
-//   const tokyo = {
-//     location: "Tokyo",
-//     minCust: 3,
-//     maxCust: 24,
-//     avgCookiesPerCust: 1.2,
-//     customersPerHour: [],
-//     cookiesPerHour: [],
-//     totalCookiesSold: 0,
-//     calculateSales: function () {
-//       for (let i = 0; i < hours.length; i++) {
-//         const hourCust = randomNumber(this.minCust, this.maxCust);
-//         this.customersPerHour.push(hourCust);
-//         const hourCookiesSold = Math.floor(hourCust * this.avgCookiesPerCust);
-//         this.cookiesPerHour.push(hourCookiesSold);
-//         this.totalCookiesSold = this.totalCookiesSold + hourCookiesSold;
-//       }
-//     },
-//   };
-
-//   tokyo.calculateSales();
-//   return tokyo;
-// }
-
-// //our third shop, Dubai
-// function calculateDubaiSales() {
-//   const dubai = {
-//     location: "Dubai",
-//     minCust: 11,
-//     maxCust: 38,
-//     avgCookiesPerCust: 3.7,
-//     customersPerHour: [],
-//     cookiesPerHour: [],
-//     totalCookiesSold: 0,
-//     calculateSales: function () {
-//       for (let i = 0; i < hours.length; i++) {
-//         const hourCust = randomNumber(this.minCust, this.maxCust);
-//         this.customersPerHour.push(hourCust);
-//         const hourCookiesSold = Math.floor(hourCust * this.avgCookiesPerCust);
-//         this.cookiesPerHour.push(hourCookiesSold);
-//         this.totalCookiesSold = this.totalCookiesSold + hourCookiesSold;
-//       }
-//     },
-//   };
-
-//   dubai.calculateSales();
-//   return dubai;
-// }
-
-// //our fourth shop, Paris
-// function calculateParisSales() {
-//   const paris = {
-//     location: "Paris",
-//     minCust: 20,
-//     maxCust: 38,
-//     avgCookiesPerCust: 2.3,
-//     customersPerHour: [],
-//     cookiesPerHour: [],
-//     totalCookiesSold: 0,
-//     calculateSales: function () {
-//       for (let i = 0; i < hours.length; i++) {
-//         const hourCust = randomNumber(this.minCust, this.maxCust);
-//         this.customersPerHour.push(hourCust);
-//         const hourCookiesSold = Math.floor(hourCust * this.avgCookiesPerCust);
-//         this.cookiesPerHour.push(hourCookiesSold);
-//         this.totalCookiesSold = this.totalCookiesSold + hourCookiesSold;
-//       }
-//     },
-//   };
-
-//   paris.calculateSales();
-//   return paris;
-// }
-
-// //our fifth shop, Lima
-// function calculateLimaSales() {
-//   const lima = {
-//     location: "Lima",
-//     minCust: 2,
-//     maxCust: 16,
-//     avgCookiesPerCust: 4.6,
-//     customersPerHour: [],
-//     cookiesPerHour: [],
-//     totalCookiesSold: 0,
-//     calculateSales: function () {
-//       for (let i = 0; i < hours.length; i++) {
-//         const hourCust = randomNumber(this.minCust, this.maxCust);
-//         this.customersPerHour.push(hourCust);
-//         const hourCookiesSold = Math.floor(hourCust * this.avgCookiesPerCust);
-//         this.cookiesPerHour.push(hourCookiesSold);
-//         this.totalCookiesSold = this.totalCookiesSold + hourCookiesSold;
-//       }
-//     },
-//   };
-
-//   lima.calculateSales();
-//   return lima;
-// }
-
-// //function to create and append the name, list, and total list to the DOM
-
 // function displaySales(cityLocation) {
 //   const locationSales = document.getElementById("locationSales"); //targets the div
 
@@ -294,7 +183,6 @@ form.addEventListener("submit", function (event) {
 
 //   locationSales.appendChild(article); //appending article in div
 // }
-// Tim created multiple for each location
 
 // displaying the lists
 // const seattle = calculateSeattleSales();
